@@ -1,5 +1,5 @@
 {
-  description = "srid/haskell-template: Nix template for Haskell projects";
+  description = "srid/shell-completion-dump: Nix template for Haskell projects";
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     flake-parts.url = "github:hercules-ci/flake-parts";
@@ -23,7 +23,7 @@
         # has only one.
         haskellProjects.main = {
           packages = {
-            haskell-template.root = ./.;
+            shell-completion-dump.root = ./.;
           };
           buildTools = hp: { } // config.treefmt.formatters;
           # overrides = self: super: {}
@@ -66,14 +66,14 @@
           run = {
             description = "Run the project with ghcid auto-recompile";
             exec = ''
-              ghcid -c "cabal repl exe:haskell-template" --warnings -T :main
+              ghcid -c "cabal repl exe:shell-completion-dump" --warnings -T :main
             '';
             category = "Primary";
           };
         };
 
         # Default package.
-        packages.default = self'.packages.main-haskell-template;
+        packages.default = self'.packages.main-shell-completion-dump;
 
         # Default shell.
         devShells.default =
