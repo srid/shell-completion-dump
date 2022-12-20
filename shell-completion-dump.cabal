@@ -76,14 +76,15 @@ common shared
   build-depends:
     , aeson
     , async
-    , base          >=4.13.0.0 && <4.18.0.0.0
+    , base                  >=4.13.0.0 && <4.18.0.0.0
     , data-default
     , directory
     , filepath
     , mtl
     , optics-core
+    , optparse-applicative
     , profunctors
-    , relude        >=1.0
+    , relude                >=1.0
     , shower
     , time
     , with-utf8
